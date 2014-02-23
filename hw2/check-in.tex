@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\usepackage{color}
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+\begin{document}
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+\smallskip
+
+Module \#3 (Induction I)\\
+Author: Tawheed Abdul-Raheem\\
+\end{center}
+\medskip
+
+
+
+Use induction to prove that for all nonnegative integers $n$:
+\[ \sum_{k=0}^{n}k^{2}=\frac{n(n+1)(2n+1)}{6} \]
+\textbf{Solution: } We are going to use induction to prove
+\[ \sum_{k=0}^{n}k^{2}=\frac{n(n+1)(2n+1)}{6} \]
+for all nonnegative integers $n$ \\
+\textbf{base case: } We prove when $n$ is $0$
+\[ \sum_{k=0}^{n}k^{2}=\frac{n(n+1)(2n+1)}{6} \]
+\[ \sum_{k=0}^{n}0^{2}=\frac{0(0+1)(2(0)+1)}{6} \]
+\[0^2 = \frac{0}{6} \]
+\textbf{Inductive step: } We prove that it is true for $n+1$, first we will solve
+the left hand side of our equation
+\[ \sum_{k=0}^{n}k^{2}=\frac{n(n+1)(2n+1)}{6} \]
+\[ \sum_{k=0}^{n+1}k^{2}=\frac{(n+1)(n+2)(2(n+1)+1)}{6} \]
+\[ \sum_{k=0}^{n}k^{2} + (n+1)^{2}=\frac{(n+1)(n+2)(2(n+1)+1)}{6} \]
+\[ \frac{n(n+1)(2n+1)}{6}+(n+1)^{2}=\frac{(n+1)(n+2)(2n+2+1)}{6} \]
+\[ \frac{n(n+1)(2n+1)+6(n+1)^{2}}{6}=\frac{(n+1)(n+2)(2n+3)}{6} \]
+\[ \frac{(n+1)[(n)(2n+1)+6(n+1)]}{6}=\frac{(n+1)(n+2)(2n+3)}{6} \]
+\[ \frac{(n+1)[(2n^{2}+7n+6)]}{6}=\frac{(n+1)(n+2)(2n+3)}{6} \]
+\[ \frac{(n+1)(2n^{2}+7n+6)}{6}=\frac{(n+1)(2n^{2}+7n + 6)}{6} \]
+\textbf{Then: } $P(n)$ is true for all nonnegative integers $n$
+
+
+\end{document}

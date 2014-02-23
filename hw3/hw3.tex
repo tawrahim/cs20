@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+
+\begin{document}
+
+\begin{center}
+    COMPUTER SCIENCE 20, SPRING 2014 \\
+    Homework 3\\
+    Normal Forms, Logic and Computers, Quantificational Logic I\\
+    Author: Tawheed Abdul-Raheem
+\end{center}
+
+\smallskip
+
+
+\begin{enumerate}
+
+    \item 
+
+        Convert $p \oplus q \oplus r$ to disjunctive normal form using:
+        \begin{enumerate}
+            \item A truth table.
+            \item Algebraic manipulations. 
+        \end{enumerate}
+
+        \textbf{Solution: } \\
+        \begin{enumerate}
+        \item
+        The truth table of $p \oplus q \oplus r$ is
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                p & q & r & p $\oplus$ q & p $\oplus$ q $\oplus$ r \\ \hline
+                T & T & T & F & T  \\
+                F & T & T & T & F  \\
+                T & F & T & T & F  \\
+                F & F & T & F & T  \\
+                T & T & F & F & F  \\
+                F & T & F & T & T  \\
+                T & F & F & T & T  \\
+                F & F & F & T & F  \\ \hline
+            \end{tabular}
+        \end{table}
+        \[ (p \wedge q \wedge r) \vee (\neg p \wedge \neg q \wedge r) \vee (\neg p \wedge q \wedge \neg r) \vee (p \wedge \neg q \wedge \neg r) \]
+
+            \item The Algebraic manipulations of the above truth table is as follows: \\
+                \[p \oplus q \oplus r \]
+                \[\big( (p \wedge \neg q) \vee (\neg p \wedge q) \big) \oplus r \]
+                \[\Big( \big( (p \wedge \neg q) \vee (\neg p \wedge q) \big) \wedge \neg r \Big) \vee  \Big( \big( \neg (p \wedge \neg q) \vee (\neg p \wedge q) \big) \wedge r \Big)\]
+                \[\Big( \big( (p \wedge \neg q) \wedge \neg r \big) \vee  \big( (\neg p \wedge q) \wedge \neg r \big) \Big) \vee \Big( [(\neg p \vee q) \wedge (p \vee \neg q) ] \wedge r \Big) \]
+                \[\Big( \big( (p \wedge \neg q) \wedge \neg r \big) \vee  \big( (\neg p \wedge q) \wedge \neg r \big) \Big) \vee \Big( [(\neg p \wedge \neg q) \vee (p \wedge  q) ] \wedge  r \Big) \]
+                \[ (p \wedge \neg q \wedge \neg r) \vee  (\neg p \wedge q \wedge \neg r) \vee (\neg p \wedge \neg q \wedge r) \vee (p \wedge  q \wedge  r) \] \\
+        \end{enumerate}
+
+
+    \item The Boolean function $G(p,q,r)$ is defined in the table below. You can think of the table as a truth table where the last column is the value of some unknown compound proposition consisting of the variables p, q, and r. Additionally, ``0'' represents False and ``1'' represents True. 
+
+        \begin{table}[h]
+            \centering
+
+            \begin{tabular}{| c c c | c |}
+                \hline
+                p & q & r & G(p,q,r) \\ \hline
+                0 & 0 & 0 & 0 \\ 
+                0 & 0 & 1 & 0 \\ 
+                0 & 1 & 0 & 0 \\ 
+                0 & 1 & 1 & 1 \\ 
+                1 & 0 & 0 & 0 \\ 
+                1 & 0 & 1 & 1 \\ 
+                1 & 1 & 0 & 0 \\ 
+                1 & 1 & 1 & 0 \\ \hline
+
+            \end{tabular}
+
+        \end{table}
+
+
+        \begin{enumerate}
+            \item Construct a proposition in disjunctive normal form whose value is the last column of the truth table. 
+            \item Show that the proposition in (a) is equivalent to $(p \oplus q)\land r$.
+            \item How many logic gates would be required to construct a circuit for the expression in (a), assuming you didn't simplify it? How many for the simplified expression in (b)?  In both cases, you may use any types of logic gates you wish.
+        \end{enumerate}
+
+        \textbf{Solution: }
+        \begin{enumerate}
+            \item The proposition in disjunctive normal form whose value is the last column of the truth table is
+                \[(\neg p \wedge q \wedge r) \vee (p \wedge \neg q \wedge r)\]
+            \item Proof that the proposition is (a) is equivalent to $(p \oplus q)\land r$ is as follows
+                \[ (p \oplus q)\land r \]
+                \[ ((p \wedge \neg q) \vee (\neg p \wedge q)) \land r \]
+                \[ ((p \wedge \neg q) \land r) \vee ((\neg p \wedge q) \land r) \]
+                \[ (p \wedge \neg q \land r) \vee (\neg p \wedge q \land r) \]
+            \item Without simplification we need $7$ logic gates. After simplification we can use $2$ logic gates
+        \end{enumerate}
+
+    \item The Orcish elevator in Middle-earth is a peculiar machine: It can move up only during the day, and move down --- only during the night. In addition, it cannot move up if it's cold, and it cannot move down if it's hot. Define p and q:
+
+        \subitem p: It is day.
+        \subitem q: It is cold.
+
+        \begin{enumerate}
+            \item Write a proposition that evaluates to True if the elevator can move (in either direction).  
+            \item Design but do not draw a logic circuit that implements the proposition in (a) with as few gates as possible from this list: NOT, OR, AND, NOR, NAND, XOR, NXOR. Can you do it with a single gate?
+        \end{enumerate}
+
+        \textbf{Solution: }
+        \begin{enumerate}
+            \item Below is the proposition that evaluates to True if the elevator can move (in either direction)
+                The truth table above shows the relationship
+
+                \[ (\neg p \wedge q) \vee (p \wedge \neg q) \]
+
+                \begin{table}[h]
+                    \centering
+                    \begin{tabular}{| c | c | c|}
+                        \hline
+                        p & q & can move \\ \hline
+                        T & T & F \\ 
+                        F & T & T \\ 
+                        T & F & T \\ 
+                        F & F & F \\ \hline
+                    \end{tabular}
+                \end{table}
+
+                \item A simplified logic gate from proposition (a) is
+                    \[ p \oplus q \]
+        \end{enumerate}
+
+    \item The domain of discourse is the set of integers . Let $S(x, y, z)$ mean that ``$z$ is the sum of $x$ and $y$.''
+        \begin{enumerate}
+            \item Write a formula that means $x$ is an even integer.\\
+                \[ P(x):  x = 2a   \exists a \in N \]
+
+            \item Write a formula that symbolizes the commutative property for addition $(x+y = y +x)$ of integers.
+                \[ \forall x \forall y \exists z1 \exists z1. Z1 = z2  : S(x,y,z1) \wedge S(y,x,z2) \]
+
+            \item Write a formula that symbolizes the associative law for addition\\ $(x + (y + z) = (x + y) + z)$ of integers.
+                \[ \forall y \forall z \exists l1 \exists l2 . l1 = l2 : (a = y + z) \wedge S(y,z, a) \wedge S (x, a, l1) \wedge S(x,y, c) \wedge S(c,z, l2) \]
+        \end{enumerate}
+
+    \item Your young nephew believes in the positive integers and understands that addition is commutative but has not thought about zero or about negative integers. You are trying to introduce him to new addition facts like: $$3 + 0 = 3 \text{ (an example of an additive identity)}$$ and $$5 + (-5) = 0 \text{ (an example of an additive inverse)}$$
+
+        Using quantifiers, devise two axioms about the integers under addition that specify precisely the properties of zero and of negation. Each will include one ``exists'' and one ``for all,'' but the order of the quantifiers is crucial.
+
+        In particular, Axiom I should define an ``additive identity'' in the set of all integers. Axiom II should define the notion of an ``additive inverse.'' (If you don't know what these terms mean, feel free to look them up on Wikipedia.) 
+        \[ \exists x \forall y (x + y = x) ) \]
+        \[ \forall y \exists x  (x + y = 0) \]
+\end{enumerate}
+\end{document}

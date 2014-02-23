@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+
+\begin{document}
+
+\begin{center}
+COMPUTER SCIENCE E-20, SPRING 2014 \\
+Homework Problems\\
+Quantificational Logic II\\
+Author: Tawheed Abdul-Raheem
+\end{center}
+
+\smallskip
+
+
+
+\begin{enumerate}
+\item Using the formula $p\Leftrightarrow q \equiv (p\Rightarrow q)\land (q\Rightarrow p)$ prove that $$\lnot p \Leftrightarrow q\equiv p\Leftrightarrow \lnot q.$$
+        \[( \neg p \rightarrow q) \wedge (q \rightarrow \neg p) \equiv (p \rightarrow \neg q) \wedge (\neg p \rightarrow p) \]
+        \[(p \vee q) \wedge (\neg q \vee \neg p) \equiv (\neg p \vee \neg q) \wedge (q \vee p) \]
+        \[ \Big[ ( p \vee q) \wedge  \neg q \Big] \vee \Big[ (p \vee q) \wedge \neg p \Big] \equiv \Big[ (\neg p \vee \neg q) \wedge q \Big] \vee \Big[ (\neg p \vee \neg q) \wedge p \Big] \]
+        \[ \Big[ ( p \wedge \neg q) \vee (q \wedge \neg q) \Big] \vee \Big[ (p \wedge \neg p) \vee (q \wedge \neg p) \Big] \equiv \Big[ (\neg p q) \vee (\neg p \wedge q) \Big] \vee \Big[ (\neg p \wedge p) \vee (\neg q \wedge p) \Big] \]
+        \[(p \wedge \neg q) \vee (q \wedge \neg p) \equiv (\neg p \wedge q) \vee (\neg q \wedge p) \]
+\item For each of the following statements, determine whether they are true or false. If false, write their logical negation (distributing the $\lnot$ across any expressions as necessary) and explain how this negation is true. In each of these, $x$ and $y$ are assumed to be integers.
+\begin{enumerate}
+\item $(\forall x)(\forall y) ((y>x) \Rightarrow (x=0))$ \\
+This statement is false and its logical equivalence is $(\exists x )(\exists y)((y > x) \wedge (x \neq 0))$
+\item $(\exists x) (\forall y) ((y>x) \Rightarrow (x=0))$ \\
+\item $(\forall x)(\exists y) ((y>x) \Rightarrow (x=0))$ \\
+\item $(\forall x)(((\forall y)(y>x)) \Rightarrow (x=0))$ \\
+\end{enumerate}
+
+\item After the first cabal's plot was discovered by the students of CS 20, the Teaching Fellows have formed a new cabal with the evil intent of making you prove the Four Color Theorem\footnote{The proof of this required checking $1936$ cases by computer, and its validity was questioned for years.} on the next homework! The only way to stop them is to unravel their logic code and discover the identities of the new cabal members. The names of the possible members are \\
+\begin{center} Keenan, Nick, Paul, Roger, Ruth, Yifan \end{center}
+
+Let $F(x)$ mean ``$x$ was in the first cabal'' and $N(x)$ mean ``$x$ is in the new cabal.'' The code is the following:
+\begin{enumerate}
+\item$F(\text{Keenan})\land F(\text{Nick})\land F(\text{Paul})\land\lnot(F(\text{Roger})\lor F(\text{Ruth})\lor F(\text{Yifan}))$
+\item$\exists x\exists y, (F(x)\land N(x)\land F(y)\land \lnot N(y))$
+\item $\forall x, (F(x)\Rightarrow N(\text{Ruth}))$
+\item $N(\text{Keenan})\lor N(\text{Roger})\Rightarrow \forall x, (F(x)\Rightarrow N(x))$
+\item $N(\text{Yifan}) \Rightarrow \lnot (N(\text{Paul})\lor N(\text{Nick}))$
+\item $N(\text{Paul})\Leftrightarrow N(\text{Nick})$
+\end{enumerate}
+%\ifsolutions
+%\\\emph{Solution:} Statement (a) tells us that the first cabal was made up of Keenan, Nick, and Paul. Statement (b) says there is someone in the first cabal in the new cabal and also someone in the first cabal who is not in the new cabal. Statement (c) is a convoluted way of saying that Ruth is in the new cabal (since $F(x)$ is true for some value of $x$). From (d) we get that neither Keenan nor Roger are in the new cabal, since the conclusion must be false due to the existence of $y$ from statement (b). Combining (e) and (b) tells us that Yifan is not in the new cabal, or else none of the old members would be a new member. Thus by part (f), The cabal is Ruth, Paul, and Nick. 
+%\fi
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+\begin{document}
+
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+Module \#9 (Quantificational Logic I) Check-in \\
+Author: Tawheed Abdul-Raheem
+\end{center}
+
+\medskip
+
+
+Let the domain of discourse be members of the class and let $L(x,y)$ be the proposition ``$x$ likes $y$." Write the following colloquial English sentences using quantificational formulas. The sentences are not necessarily unambiguous. If a sentence has more than one possible meaning, explain the ambiguity and which interpretation you have chosen.
+
+\begin{enumerate}
+
+\item Everyone in the class likes some other member of the class. \\
+    $\forall x \exists y, (x \not = y \wedge L(x,y))$
+
+\item Someone doesn't like anybody and nobody likes that person. \\
+    $\exists x \forall y, (x \not = y \wedge \neg L(x,y) \wedge \neg L(y,x))$
+
+\item At least three different people like the same person. \\
+    $\exists w \exists x \exists y \exists z, (w \neq z \wedge x \neq z \wedge y \neq z \wedge L(w,z) \wedge L(x,z) \wedge L(y,z))$
+
+\end{enumerate}
+\end{document}

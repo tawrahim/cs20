@@ -1,0 +1,195 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{tikz}
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+\begin{document}
+
+\begin{center}
+    COMPUTER SCIENCE E-20, SPRING 2014 \\
+    Homework Problems\\
+    Strong Induction, Induction Review, Propositional Logic \\
+    Author: Tawheed Abdul-Raheem
+\end{center}
+
+\smallskip
+
+\begin{enumerate}
+
+    \item Suppose you are given a real number $x$ such that $x + \frac{1}{x}$ is an integer.  Use Strong Induction to show that $x^n + \frac{1}{x^n}$ is an integer for all integers $n$.
+
+        \textbf{Proof: }
+        We will prove by strong induction that $x^n + \frac{1}{x^n}$ is an integer for all integers $n$
+
+        \textbf{Base case: } Lets assume that $(n = 0): P(0)$
+        \[ x^0 + \frac{1}{x^0}\]
+        The solution we get from above brings us back to our proposition where $x$ is a real number
+
+        \textbf{Basis step: } Lets assume that $(n = 1): P(1)$
+        \[ x^1 + \frac{1}{x^1}\]
+
+        \textbf{Inductive step: } Suppose that $n \geq 1$ represents integers that can fit in $x + \frac{1}{x}$ such $x$ is a real number. We must show that $P(n+1)$
+        also holds for this argument, namely $n + 1$ otherwise the argument does not hold
+
+        \textbf{Conclusion: } Since adding $1$ to $n$ makes the number positive its fair to say that our argument holds for when $P(n) is (n+1)$
+
+    \item Prove using strong induction that any square can be subdivided into $n$ smaller squares, where $n>5$. For example, the large square below has been subdivided into 6 squares.\\
+        {\em Hint: first show that any square subdivided into $k$ squares can easily be subdivided into $k+3$ squares, then think how many base cases you need show are true (it is not just the case of n=6).}
+
+        \begin{center}
+            \begin{tikzpicture}
+
+                \draw (0,0) -- (3,0) -- (3,3) -- (0,3) -- (0,0);
+                \draw (2,0) -- (2,2) -- (0,2);
+                \draw (1,2) -- (1,3);
+                \draw (2,2) -- (2,3);
+                \draw (2,1) -- (3,1);
+                \draw (3,2) -- (2,2);
+
+            \end{tikzpicture}
+        \end{center}
+        \textbf{Solution: } Each of the squares can be easily subdivided to $n+3$. When we we subdivided the square, we get additional $3$ squares, adding that to the original square we have $n+3$ sub squares. Now we need to show that our squares can be subdivided in to the $7$ and $8$. We can subdivide our $7$ and $8$ easily with $n+3$
+
+    \item The Fibonacci numbers are defined by $F_0 = 0, F_1 = 1, F_n = F_{n-1} + F_{n-2}$.  Prove  using strong induction that for all $n \geq 2$:
+        \begin{equation*}
+            F_n \geq \phi^{n-2}
+        \end{equation*}
+        where $\phi$ is the constant $\frac{1+\sqrt{5}}{2}$.  \\
+        {\it Hint:} Verify and use the fact that $\phi + 1 = \phi^2$.
+
+        \textbf{Solution: } We will use mathematical induction to prove that for all integers $n \geq 2$,$P(n)$ is true
+        So first we show that $P(0)$ and $P(1)$ are true we let $P(0)$ be $F_0$ and $P(1)$ be $F_1$ \\
+
+        \textbf{ Lets prove P(2) }
+        \[ F_2  \geq \phi^{n-2} \]
+        \[ F_2  \geq \phi^{0} \]
+        \[ 1  \geq 1 \]
+
+        \textbf{ Lets prove P(3) }
+        \[ F_3  \geq \phi^{n-2} \]
+        \[ F_3  \geq \phi^{3-2} \]
+        \[ 2 \geq \frac{1+\sqrt{5}}{2} \]
+
+        \textit{\textbf{
+                for all integer $n \geq 2$, if $P(n)$ is true for all integers 
+                n from 2 then it must be true for $P(n+1)$
+            }}
+        Let this be our predicate that we are trying to prove for $n+1$
+        \[ F_{n+1} = \phi^{n-1} \]
+        The above was derived from substituition.
+
+        \[ F_{n} \geq \frac{\phi^{(n)}}{ \phi + 1} \]
+        \[ F_{n-1} \geq \frac{\phi^{(n-1)}}{ \phi + 1} \]
+        \textbf{\it{ By summing those two inequalities we get }}
+        \[ F_{n} + F_{n-1} \geq \frac{\phi^{(n)}}{ \phi + 1} + \frac{\phi^{(n-1)}}{ \phi + 1} \]
+        \[ F_{n+1} \geq \frac{(\phi^{n-1})(\phi + 1)}{ \phi + 1} \]
+        \[ F_{n+1} \geq \phi^{n-1} \]
+
+       We have successfully proved our theorem.
+       
+
+    \item
+        \begin{enumerate}
+
+            \item Define the propositions p=``You obey the speed limit'' and the q=``You are going to a wedding''. Write the following sentences as compound propositions using p and q: 
+                \begin{enumerate}
+                    \item Failing to obey the speed limit implies that you are going to a wedding.
+                    \item You drive below the speed limit only if you are going to a wedding. 
+                    \item You do not obey the speed limit unless you are going to a wedding. 
+                    \item You drive above the speed limit whenever you are going to a wedding. 
+                \end{enumerate}
+
+                \textbf{Solution: } \\
+                p=``You obey the speed limit'' \\
+                q=``You are going to a wedding''
+                \begin{enumerate}
+                    \item $\neg p \rightarrow q $
+                    \item $p \leftrightarrow q$
+                    \item $p \leftrightarrow q$
+                    \item $q \rightarrow \neg p$
+                \end{enumerate}
+
+            \item Define the propositions p=``The home team wins,'' q=``It is raining,'' r=``There is an earthquake '' Write the following sentences as compound propositions using p,q, and r:
+                \begin{enumerate}
+                    \item Rain and earthquake are sufficient for the home team to win. 
+                    \item Rain and earthquake are necessary but not sufficient for the home team to win. 
+                    \item The home team wins only if it is not raining and there is no earthquake.
+                    \item If it is raining the home team will win unless there is an earthquake.  
+                \end{enumerate}
+
+                \textbf{Solution: } \\
+                p=``The home team wins,'' \\
+                q=``It is raining,'' \\
+                r=``There is an earthquake ''
+                \begin{enumerate}
+                    \item $(q \wedge r) \rightarrow p $
+                    \item $p \rightarrow (q \wedge r) $
+                    \item $p \rightarrow \neg(q \wedge r) $
+                    \item $ (q \wedge \neg r) \rightarrow p$
+                \end{enumerate}
+
+        \end{enumerate}
+
+    \item Using a truth table, determine which of the following are equivalent to $(p \wedge q) \rightarrow r$ and which are equivalent to $(p \vee q) \rightarrow r$:
+\begin{enumerate}
+    \item $p \rightarrow (q \rightarrow r)$
+    \item $q \rightarrow (p \rightarrow r) $
+    \item $(p \rightarrow r) \wedge (q \rightarrow r) $
+    \item $(p \rightarrow r) \vee (q \rightarrow r)$
+\end{enumerate}
+
+\textbf{Solution: } \\
+\begin{displaymath}
+\begin{array}{|c|c|c|c|c|c|c|}
+    p & q & r & p \wedge q & p \vee q & (p \wedge q) \rightarrow r & (p \vee q) \rightarrow r \\
+\hline
+T & T & T & T & T & T & T \\
+F & T & T & F & T & T & T \\
+T & F & T & F & T & T & T \\
+F & F & T & F & F & T & T \\
+T & T & F & T & T & F & F \\
+F & T & F & F & T & T & F \\
+T & F & F & F & T & T & F \\
+F & F & F & F & F & T & T \\
+\end{array}
+\end{displaymath}
+
+
+\begin{displaymath}
+\begin{array}{|c|c|c|c|c|c|c|}
+     q \rightarrow r &  p \rightarrow (q \rightarrow r) & p \rightarrow r & q \rightarrow (p \rightarrow r) & (p \rightarrow r) \wedge (q \rightarrow r) & (p \rightarrow r) \vee (q \rightarrow r) \\
+\hline
+T & T & T & T & T & T \\
+T & T & T & T & T & T \\
+T & T & T & T & T & T \\
+T & T & T & T & T & T \\
+F & F & F & F & F & F \\
+F & T & T & T & F & T \\
+T & T & F & T & F & T \\
+T & T & T & T & T & T \\
+\end{array}
+\end{displaymath}
+
+Equivalent to $(p \wedge q) \rightarrow r$
+\begin{enumerate}
+    \item $p \rightarrow (q \rightarrow r)$
+    \item $q \rightarrow (p \rightarrow r) $
+    \item $(p \rightarrow r) \vee (q \rightarrow r)$
+\end{enumerate}
+
+
+Equivalent to $(p \vee q) \rightarrow r$
+\begin{enumerate}
+    \item $(p \rightarrow r) \wedge (q \rightarrow r) $
+\end{enumerate}
+
+\end{enumerate}
+
+\pagebreak
+
+\end{document}

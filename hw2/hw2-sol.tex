@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{tikz}
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+
+\begin{document}
+
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+Homework Problems\\
+Strong Induction, Propositional Logic
+\end{center}
+
+\smallskip
+
+
+\paragraph*{Due Wednesday February 12, 2014. CS 20 students should bring a hard copy to class. CSCI E-120 students should submit an electronic copy.} 
+
+
+\begin{enumerate}
+
+\item Suppose you are given a real number $x$ such that $x + \frac{1}{x}$ is an integer.  Use Strong Induction to show that $x^n + \frac{1}{x^n}$ is an integer for all positive integers $n$.
+
+\item[ ] {\bf Solution}: For $n=1$, the result holds. For $n=2$, we know that $(x+\frac{1}{x})^2 =x^2 + \frac{1}{x^2} + 2$, so the result holds for $n=2$. Suppose the result holds for all positive integers $n<k$. The induction hypothesis tells us $x^{k-1}+\frac{1}{x^{k-1}}$ is an integer. Moreover, we know $x+\frac 1 x$ is an integer, so we conclude:
+\begin{eqnarray*}
+(x^{k-1}+\frac{1}{x^{k-1}})(x+\frac 1 x) &=& x^k + \frac{x^{k-1}}{x}+\frac{x}{x^{k-1}} + \frac{1}{x^k}\\
+&=&x^k+\frac{1}{x^k} + x^{k-2} + \frac{1}{x^{k-2}}
+\end{eqnarray*}
+Given that the induction hypothesis guarantees $x^{k-2} + \frac{1}{x^{k-2}}$ is an integer, it follows that  $x^k + \frac 1 {x^k}$ is an integer.
+
+\textbf{Question: } \\
+The solution is a little bit unclear to me if we plug $2$ into this equation, this is what I see as the result. $x^2 + \frac{1}{x^2}$ In your solution I see that
+you have an extra $+2$, not sure where that is comming from as it does not seem obvious to me. Also I noticed that you used $k-1$ in ypur inductive hypothesis
+why is that? I thought that were always trying to prove for $n+1$
+
+
+
+\end{enumerate}
+
+\pagebreak
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

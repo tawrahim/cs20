@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{circuits.logic.US}
+
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+
+\begin{document}
+
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+Module \#8 (Logic and Computers) - Check-in questions \\
+Author: Tawheed Abdul-Raheem
+\smallskip
+
+\end{center}
+
+\begin{enumerate}
+
+
+\item
+Perform the following operations in binary: 
+
+\begin{enumerate}
+		\item $11011_2 + 11010_2$
+		
+		\item $ 10101_2 -  1010_2$
+		
+		\item check your answers by performing the same operations in decimal.  
+
+\end{enumerate}
+
+        \textbf{Solution: } \\
+
+        \begin{enumerate}
+                \item
+        \begin{tabular}{cccccccc}
+           & 1 & 1 & 0 & 1 & 1 \\
+          + & 1 & 1 & 0 & 1 & 0 \\
+        \hline
+          1 & 1 & 0 & 1 & 0 & 1  \\
+        \end{tabular}
+
+        \item
+            \begin{tabular}{ccccccc}
+                1 & 0 & 1 & 0 & 1 \\
+                - & 1 & 0 & 1 & 1 \\
+                \hline
+                & 1 & 0 & 1 & 1 \\
+                \end{tabular}
+                \item
+                    To perform the same operation in decimal it is important for us to know each of the term in the numbers
+                    \[2^0 = 1, 2^1=2, 2^2=4, 2^3=8, 2^4=32 .... \]
+                    \begin{tabular}{ccccccccccccccccccccc}
+                       & 1 & 1 & 0 & 1 & 1 & $\implies$ &&16 & 8 & & 2 & 1 & = & 27\\
+                      + & 1 & 1 & 0 & 1 & 0 & $ \implies$ && 16 & 8 & & 2 & & = & 26\\
+                    \hline
+                      1 & 1 & 0 & 1 & 0 & 1 &  $\implies$ &32 & 16  &  & 4 & & 1 & = & 53 \\
+                    \end{tabular} \\
+
+                    \smallskip
+                    \smallskip
+                    \smallskip
+                    \smallskip
+
+        \begin{tabular}{cccccccccccccccccccccc}
+           & 1 & 1 & 0 & 1 & 1 & $\implies$ & 21\\
+          + & 1 & 1 & 0 & 1 & 0  & $\implies$ & 10\\
+        \hline
+          1 & 1 & 0 & 1 & 0 & 1 & $\implies$ & 11 \\
+        \end{tabular}
+            
+\end{enumerate}
+
+     
+
+\end{enumerate}
+\end{document}
