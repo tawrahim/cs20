@@ -27,15 +27,18 @@ Author: Tawheed Abdul-Raheem
         \[( \neg p \rightarrow q) \wedge (q \rightarrow \neg p) \equiv (p \rightarrow \neg q) \wedge (\neg p \rightarrow p) \]
         \[(p \vee q) \wedge (\neg q \vee \neg p) \equiv (\neg p \vee \neg q) \wedge (q \vee p) \]
         \[ \Big[ ( p \vee q) \wedge  \neg q \Big] \vee \Big[ (p \vee q) \wedge \neg p \Big] \equiv \Big[ (\neg p \vee \neg q) \wedge q \Big] \vee \Big[ (\neg p \vee \neg q) \wedge p \Big] \]
-        \[ \Big[ ( p \wedge \neg q) \vee (q \wedge \neg q) \Big] \vee \Big[ (p \wedge \neg p) \vee (q \wedge \neg p) \Big] \equiv \Big[ (\neg p q) \vee (\neg p \wedge q) \Big] \vee \Big[ (\neg p \wedge p) \vee (\neg q \wedge p) \Big] \]
+        \[ \Big[ ( p \wedge \neg q) \vee (q \wedge \neg q) \Big] \vee \Big[ (p \wedge \neg p) \vee (q \wedge \neg p) \Big] \equiv \Big[ (\neg p \wedge q) \vee (\neg p \wedge q) \Big] \vee \Big[ (\neg p \wedge p) \vee (\neg q \wedge p) \Big] \]
         \[(p \wedge \neg q) \vee (q \wedge \neg p) \equiv (\neg p \wedge q) \vee (\neg q \wedge p) \]
 \item For each of the following statements, determine whether they are true or false. If false, write their logical negation (distributing the $\lnot$ across any expressions as necessary) and explain how this negation is true. In each of these, $x$ and $y$ are assumed to be integers.
 \begin{enumerate}
 \item $(\forall x)(\forall y) ((y>x) \Rightarrow (x=0))$ \\
-This statement is false and its logical equivalence is $(\exists x )(\exists y)((y > x) \wedge (x \neq 0))$
+This statement is false and its logical equivalence is $(\exists x )(\exists y)((y > x) \wedge (x \neq 0))$ The negation is true in the sense that we can claim that there exists some number $x$ and $y$ and also where $y> x$. The fact that $x$ is less than $y$ does not necessarily mean that $x = 0$.
 \item $(\exists x) (\forall y) ((y>x) \Rightarrow (x=0))$ \\
+This statement is true because there exists some number that can be $0$, for all the $y's$. It does not really matter what the value of $y$ is in order to make this statement true. Our implication is true so the statement must be true.
 \item $(\forall x)(\exists y) ((y>x) \Rightarrow (x=0))$ \\
+This statement is true because for all the $x's$, there can exist exists a $y$ that is greater than $0$. Because $y > x$ can be true (i.e $x + 1$ -- determining the value of $y$ based on $x$ ),  it does not really matter what the value of $x$ is inorder for the statement to be true.
 \item $(\forall x)(((\forall y)(y>x)) \Rightarrow (x=0))$ \\
+To test for the truthness of this statemnet we can first find what $(\forall y) ((y>x) \Rightarrow ( x = 0))$ evaluates to. For all $y$ there can exist a chance whereby it is less than $x$ because the value is already known. This leaves us with the statement $(\forall x)(F \Rightarrow (x = 0))$ At this point it really does no matter whether or not $x = 0$ because we know that $False$ implies anything is $True$
 \end{enumerate}
 
 \item After the first cabal's plot was discovered by the students of CS 20, the Teaching Fellows have formed a new cabal with the evil intent of making you prove the Four Color Theorem\footnote{The proof of this required checking $1936$ cases by computer, and its validity was questioned for years.} on the next homework! The only way to stop them is to unravel their logic code and discover the identities of the new cabal members. The names of the possible members are \\
@@ -50,9 +53,12 @@ Let $F(x)$ mean ``$x$ was in the first cabal'' and $N(x)$ mean ``$x$ is in the n
 \item $N(\text{Yifan}) \Rightarrow \lnot (N(\text{Paul})\lor N(\text{Nick}))$
 \item $N(\text{Paul})\Leftrightarrow N(\text{Nick})$
 \end{enumerate}
-%\ifsolutions
-%\\\emph{Solution:} Statement (a) tells us that the first cabal was made up of Keenan, Nick, and Paul. Statement (b) says there is someone in the first cabal in the new cabal and also someone in the first cabal who is not in the new cabal. Statement (c) is a convoluted way of saying that Ruth is in the new cabal (since $F(x)$ is true for some value of $x$). From (d) we get that neither Keenan nor Roger are in the new cabal, since the conclusion must be false due to the existence of $y$ from statement (b). Combining (e) and (b) tells us that Yifan is not in the new cabal, or else none of the old members would be a new member. Thus by part (f), The cabal is Ruth, Paul, and Nick. 
-%\fi
+\if
+solutions
+\\\emph{Solution:} Statement (a) tells us that the first cabal was made up of Keenan, Nick, and Paul. Statement (b) says there is someone in the first cabal in the new cabal and also someone in the first cabal who is not in the new cabal. Statement (c) is a convoluted way of saying that Ruth is in the new cabal (since $F(x)$ is true for some value of $x$). From (d) we get that neither Keenan nor Roger are in the new cabal, since the conclusion must be false due to the existence of $y$ from statement (b). Combining (e) and (b) tells us that Yifan is not in the new cabal, or else none of the old members would be a new member. Thus by part (f), The cabal is Ruth, Paul, and Nick. 
+\fi
+\textbf{Solution: }Statement (a) tells us that the first cabal was made up of Keenan, Nick, and Paul. Statement (b) says there is someone in the first cabal in the new cabal and also someone in the first cabal who is not in the new cabal. Statement (c) is a convoluted way of saying that Ruth is in the new cabal (since $F(x)$ is true for some value of $x$). From (d) we get that neither Keenan nor Roger are in the new cabal, since the conclusion must be false due to the existence of $y$ from statement (b). Combining (e) and (b) tells us that Yifan is not in the new cabal, or else none of the old members would be a new member. Thus by part (f), The cabal is Ruth, Paul, and Nick. 
+
 \end{enumerate}
 
 \end{document}
