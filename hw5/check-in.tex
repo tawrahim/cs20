@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+\begin{document}
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+\smallskip
+Module \#11 (Sets) Check-in \\
+Tawheed Abdul-Raheem
+\end{center}
+
+\begin{enumerate}
+\item Using set notation, give formal descriptions of the following sets:
+\begin{enumerate}
+\item The set containing no elements. \\
+    $\emptyset$
+\item The power set of a set $X$, denoted $\mathcal{P}(X)$, i.e., the set containing all subsets of $X$. \\
+    $P(x) = \{y | y \subseteq x \}$
+\item The difference between two sets $X$ and $Y$, denoted $X\setminus Y$, i.e., the set containing all elements of $X$ that are not elements of $Y$.  \\
+    $\{b | b \subseteq X \setminus Y\} $
+\end{enumerate}
+\item Prove that if $A, B, C,$ and $D$ are finite sets such that $A \subseteq B$ and $C \subseteq D$, then $(A \times C) \subseteq (B \times D)$. \\
+    $\forall x \in A$ $\forall y \in C$       $(x,y) \in A \times C$ \\
+    $x \in B $   $y \in D$                    $(x,y) \in B \times D$
+\item Decide whether each statement is true or false and why:
+\begin{enumerate}
+\item $\emptyset = \{\emptyset\}$ \\
+    False, the statement claims that an empty set is equal to a set that contains an empty set. $\emptyset$ contains $0$ elements whiles $\{ \emptyset \}$ contains $1$ element.
+\item $\emptyset = \{0 \}$
+    False, an empty set does not $equal$ to set that contains $0$ element.
+\item $\emptyset \in \{\}$ \\
+    False, an empty set is not a member of an empty set
+\item $\emptyset = \{x \in \mathbb{N}:\ x \leq 0 \wedge x > 0\}$ \\
+    True, we say that $x$ is some enumerate the is less than or equal to $0$ and also $0$ greater than $0$. These two condition cannot be true at the same time so $x \leq 0 \wedge x > 0$ is $False$ which means that set has no item in it.
+\end{enumerate}
+\item The combined enrollment in three classes, CS 20, CS 121, and CS 124, is 100. There are 60 students enrolled in CS 20, 70 students enrolled in CS 121, 30 students enrolled in CS 124, and 10 students enrolled in all three classes.\begin{enumerate}
+\item Let $A,B,C$ represent the set of all students in CS 20, CS 121, and CS 124 respectively. Represent the information given above using set union, intersection, and cardinality. \\
+    $A \cup B \cup C$  \\
+    $A \cap B \cap C$ \\
+    $|A \cup B \cup C| = 100$ \\
+\item How many students are enrolled in exactly two of the classes? \\
+    $60 + 70 + 30 - |A \cap B| - |A \cap C| - |B \cap C| + 10 = 100$ \\
+    $60 + 70 + 30 + 10 - 100 = |A \cap B| + |A \cap C| + |B \cap C|$ \\
+    $170 - 100 = |A \cap B| + |A \cap C| + |B \cap C|$ \\
+    $70 = |A \cap B| + |A \cap C| + |B \cap C|$ \\
+    %$ 70 = 30$ \\
+    $70 - 30 = 40$ \\
+    $40$ students are enrolled in exactly two classes
+
+\end{enumerate}
+\end{enumerate}
+\pagebreak
+
+\end{document}

@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{linguex}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+\newif\ifsolutions
+%\solutionstrue
+\solutionsfalse
+
+\begin{document}
+
+\begin{center}
+\large
+COMPUTER SCIENCE 20, SPRING 2014 \\
+Module \#12 (Relations and Functions) - Checkin \\
+Author: Tawheed Abdul-Raheem
+\medskip
+
+\end{center}
+\medskip
+
+
+\paragraph*{Small group questions}
+\begin{enumerate}
+
+\item Determine which labels apply to the following relations: function, total, injective, surjective, and bijective.
+
+\begin{enumerate}
+\item The relation that assigns a Harvard undergraduate student to a residential House \\
+     surjective
+
+\item The relation that maps every natural number to its square (from natural numbers to natural numbers) \\
+    total, function
+\item The relation that maps every integer to its square (from integers to natural numbers) \\
+    total function 
+\item The relation that maps every student in the class to every class he or she is taking this current semester. \\
+    total, surjective
+\end{enumerate}
+\item Show that if two finite sets $A$ and $B$ are the same size, and $r$ is a total injective function from $A$ to $B$, then $r$ is also surjective; i.e. $r$ is a bijection. \\
+    If two finite sets $A$ and $B$ have the same size or said to have the same cardinality $|A| = |B|$ and $r$ is a total injective frunction from $A$ to $B$, this means that $every$ element in the codomain has at most one arrow coming in. By proof, this statement also holds for a surjective relationship. This is because for a relationship to surjective everything in the codomain has something mapped to it, which happens to be satisfied by the fact that we know that the relationship is injective. --Hmm, I don't think my proof is true because an injective function can have elements in codomain with nothing pointing to it. \\
+\item Given two functions $f,g$, let $g \circ f$ denote function composition, i.e., $g \circ f=g(f(x))$. Prove or disprove the following claim: If $f$ is total and injective and $g$ is total and surjective, then $g \circ f$ is injective. \\
+    Suppose $f: A \rightarrow B$ is a total injective function and $f: B \rightarrow C$ is a total surjective function. To prove that $g \circ f: A \rightarrow C$ is injective, we need to prove that 
+\item We have been representing English quantificational determiners like \emph{every} and \emph{some} as first order quantifiers. A more linguistically accurate representation of these words is to treat them as relations on sets:
+\begin{itemize}
+\item every $\equiv R$, where $R(A,B)=1$ iff $A \subseteq B$.
+\item some $\equiv S$, where $S(A,B)=1$ iff $A\cap B \neq \emptyset$.
+\end{itemize}
+With these definitions in place, we can represent the semantics of a simple sentence as follows.
+\ex. \a. Every boy likes Mary
+\b. $R(B,L)=1$, where $B=\{x: x \text{ is a boy}\}$ and $L=\{y: y \text{ likes Mary}\}$.
+
+Write the semantic formulae for the following English sentences. You may define predicates as necessary following the model established above.
+\begin{enumerate}
+\item A girl saw John. \\
+    $S(G,J)=1$ where $G=\{x: x \text{ is some girl}\}$ and $J=\{y: y \text{ saw John}\}$.
+\item Every MiG shot some pilot.\\
+    $R(M,S(A,B)=1)=1$ where $M=\{x: x \text{ a mig}\}$ and $S(A,B)=\{y: y \text{ shot some pilot}\}$.
+\end{enumerate} 
+\item Prove that the composition of two surjective function is surjective\\
+    Suppose two functions $f: A \rightarrow B$ and $g: B \rightarrow C$, to proof that $A \rightarrow C$, we need to show
+    $\forall c \in C \exists a \in A $ such that $( g \circ f)(a) = c$ \\
+    Since $g : B \rightarrow C$ is surjective, $\exists b \in  B$ such that $g(b) = c$ \\
+    Since $f : A \rightarrow C$ is surjective, $\exists a \in  A$ such that $f(a) = b$ \\
+    $g(f(a)) = g(b) = c$
+\end{enumerate}
+\end{document}

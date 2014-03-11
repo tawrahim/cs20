@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+
+\begin{document}\textsl{}
+
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+Module \#15 (Recursive Data Types and Structural Induction) - in class\\
+\end{center}
+\begin{itemize}
+\item Meyer, introductory section in Chapter 6, and section 6.1.\\
+6.2-6.4 (optional) provide concrete examples of recursive data types and structural induction (from real definitions in programming languages).
+\end{itemize}
+
+\paragraph*{Executive Summary}
+\begin{enumerate}
+
+\item Recursive definitions. Remember how to recursively define a set $S$.
+\begin{itemize}
+\item Base case(s). These define the base cases of $S$.
+\item Constructor case(s). These define new elements of $S$ from previously constructed elements of $S$ or from the base cases of $S$.
+\item Examples:
+	\begin{itemize}
+	\item Strings: Let $A$ be a nonempty set called an \textit{alphabet}, whose elements are \textit{characters}. Let the set of strings $A^*$ be defined as follows:
+		\begin{itemize}
+		\item Base case: the empty string $\epsilon$ is in $A^*$.
+		\item Constructor case: If $a \in A$ and $s \in A^*$, then $(a,s) \in A^*$.
+		\item If $A = \{a,b,\ldots,y,z\}$, the string $(x,(y,(z,\epsilon)))$ would be a member of $A^*$.
+		\end{itemize}
+	\item String Concatenation: Let the concatenation $s \cdot t$ of strings $s,t \in A^*$ be defined as follows:
+		\begin{itemize}
+		\item Base case: $\epsilon \cdot t ::= t$.
+		\item Constructor case: $(a,s) \cdot t ::= (a,s \cdot t)$.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\item Structural induction. This proof technique is used for proving properties of recursively defined data types.
+\begin{itemize}
+\item Let $S$ be a inductively defined set. Let $P(x)$ be a property we're trying to prove about $S$ for all $x \in S$.
+\item Base case(s): For each base case $x$ in the definition of $S$, prove $P(x)$.
+\item Constructor case(s): For each construction case that uses $x_1, \ldots, x_n \in S$ to construct $x \in S$, show that
+$$P(x_1), \ldots, P(x_n) \implies P(x)$$
+In structural induction proofs, the inductive hypothesis is that the property $P$ holds true for all ``sub-cases'' of $x$: $P(x_1),\ldots,P(x_n)$.
+\end{itemize}
+
+\end{enumerate}
+\end{document}

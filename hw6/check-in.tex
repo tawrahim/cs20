@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+\begin{document}\textsl{}
+
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+Module \#15 (Recursive Data Types and Structural Induction) - in class\\
+Author: Tawheed Abdul-Raheem
+\end{center}
+
+
+\paragraph*{Small group problems}
+
+\begin{enumerate}
+\item Recursive definitions. Recursively define the sets of natural numbers $\mathbb{N}$, Fibonnaci numbers, and integers $\mathbb{Z}$.
+    \begin{enumerate}
+            \begin{item}
+                \begin{itemize}
+                    \item Base case: Let $0 \in \mathbb{N}$.
+                    \item Constructor case: Given $x \in \mathbb{N}$, $x + 1 \in \mathbb{N}$.
+                \end{itemize}
+            \end{item}
+            \begin{item}
+                \begin{itemize}
+                    \item Base case: Let $0 \in F(0)  = 0$.
+                    \item Base case: Let $1 \in F(1) = 1$.
+                    \item Constructor case: $if x \in F $and $x > 1$ then$ F(x) = F_{x-1} + F_{x-2}$.
+                \end{itemize}
+            \end{item}
+            \begin{item}
+                \begin{itemize}
+                    \item Base case: Let $0 \in \mathbb{Z}$.
+                    \item Constructor case: Given $x \in \mathbb{Z}$, $x + 1 \in \mathbb{Z}$, $x - 1 \in \mathbb{Z}$.
+                \end{itemize}
+            \end{item}
+    \end{enumerate}
+%\item Associativity of Concatenation. Prove that for all strings $r,s,t \in A*$
+%$$(r \cdot s) \cdot t = r \cdot (s \cdot t)$$
+%$$(s \cdot t) = s \cdot t \text{ and } (r \cdot s) = r \cdot s$$
+%$\text{\textbf{Base case:  }} ( s = \lambda ) $
+%$$( s \cdot t ) = (\lambda \cdot t) $$
+%$$=(t)$$
+%$$= 0 \cdot (t)$$
+%$$= ( s \cdot t )$$
+%$$( r \cdot s ) = (r \cdot \lambda) $$
+%$$=(r)$$
+%$$= r \cdot 0$$
+%$$= ( r \cdot s )$$
+%\textbf{Constructor Case: } Great! now we have solved the things in the things in the parenthesis, now we need to show that it is true for all cases
+%\item String Reversal. Intuitively, the reversal of a string is the string written backwards. For example $\mathsf{rev}(abcde) = edcba$. \\
+%\begin{enumerate}
+%\item Provide a recursive definition of $\mathsf{rev}(s)$ for $s \in A^*$ using the definitions of $A^*$ and concatenation.\\
+    %\textbf{Base case: } Let say that the string is of size $0$/empty then $\mathsf{rev}(empty string)$ is still an empty string\\
+    %\textbf{Base case: } Let say that the string is of size $1$ then $\mathsf{rev}(sizeOne)$ is the string it self.\\
+    %\textbf{Constructor case: } This case handles all other sizes, lets say we have two strings $r$ and $s$ then $\mathsf{rev}(s, r)$ would be $\mathsf{rev}(r) \cdot \mathsf{rev}(s)$
+%\item For all strings $s, r \in A^*$, prove that 
+%$$\mathsf{rev}(s \cdot r) = \mathsf{rev}(r) \cdot \mathsf{rev}(s)$$
+%\end{enumerate}
+%\item Counting Characters. Let $\#_c(s)$ denote the number of occurrences of the character $c \in A$ in the string $s$ on the recursive definition of $s \in A^*$, where $A^*$ defines strings as nested ordered pairs, i.e. $(x,(y,(z,\epsilon))) \in A^*$.
+%\begin{itemize}
+%\item Base case: $\#_c(\epsilon) ::= 0$, where $\epsilon$ is the empty string ``''.
+%\item Constructor cases:
+%$$\#_c(s) ::= \begin{cases} \#_c(s) & \text{if }a \not = c \\
+%1 + \#_c(s) & \text{if }a = c
+%\end{cases}$$
+%Prove that for all $s,t \in A^*$ and $c \in A$
+%$$\#_c(s \cdot t) = \#_c(s) + \#_c(t)$$
+%\end{itemize}
+\end{enumerate}
+\pagebreak
+
+\end{document}
