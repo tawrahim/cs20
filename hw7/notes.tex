@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+
+\begin{document}\textsl{}
+
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+
+Module \#18 (Digraphs and Relations)
+\end{center}
+Author: Roger Huang\\
+Reviewers: Anupa Murali\\
+Last modified: March 8, 2014
+\paragraph*{Readings from Meyer}
+\begin{itemize}
+\item Meyer section 9.1, 9.3, 9.4, 9.10, 9.11
+\end{itemize}
+
+\paragraph*{Executive Summary}
+\begin{enumerate}
+\item Properties of binary relations
+\begin{itemize}
+\item \textit{Transitive}: A binary relation $R$ on the set $A$ is transitive iff\\$u R v \wedge v R w \implies u R w$ for all $u,v,w \in A$.
+\item \textit{Reflexive}: $u R u$ for all $u \in A$.
+\item \textit{Irreflexive}: $\neg(uRu)$ for all $u \in A$
+\item \textit{Symmetric}: $u R w \implies w R u$ for all $u,w \in A$.
+\item \textit{Antisymmetric}: $u R w \implies \neg(wRu)$ for all $u, w \in A$, $u \neq w$.
+\item \textit{Asymmetric}: $u R w \implies \neg(wRu)$ for all $u, w \in A$.
+\end{itemize}
+\item Recall that $G$ is a binary relation on $V$, where $uGw$ means that there is an edge from $u$ to $w$.
+\begin{itemize}
+\item $G^+$ is transitive and is the \textit{transitive closure} of $G$. This means that $G^+$ is the minimal transitive relation that includes $G$ (i.e. $G \subseteq G^+$).
+\item $G^*$ is reflexive, transitive, and the \textit{reflexive transitive closure} of $G$.
+\end{itemize}
+\item The vertices $u,v \in V$ are \textit{strongly connected} iff $uG^*v \wedge vG^*u$. That is, if there exists a walk from $u$ to $v$ and a walk back from $v$ to $u$.
+\item Special types of relations
+\begin{itemize}
+\item \textit{Strict partial orders}: transitive and irreflexive
+\item \textit{Weak partial orders}: transitive, reflexive, and antisymmetric
+\item \textit{Equivalence relations}: transitive, reflexive, and symmetric
+\item A relation $R$ is a weak partial order iff $R = D^*$ for some DAG $D$
+\item A relation $R$ is a equivalence relation iff $R$ is the strongly connected relation of some digraph
+\end{itemize}
+\item An equivalence relation $R$ decomposes the domain into subsets called \textit{equivalence classes}, where $aRb$ iff $a$ and $b$ are in the same equivalence class.
+\end{enumerate}
+
+\paragraph*{Check-in problem}
+\begin{enumerate}
+\item Let $R$ be a binary relation on Harvard students such that $aRb$ iff $a$ and $b$ are people in the same house. Then $R$ is (check all that apply):
+\begin{enumerate}
+\item Reflexive
+\item Transitive
+\item Symmetric
+\item Antisymmetric
+\end{enumerate}
+\end{enumerate}
+
+\paragraph*{Small group problems}
+
+\begin{enumerate}
+\item Draw a directed graph with 3 vertices $A, B, C$ representing a relationship that is:
+\begin{enumerate}
+\item Reflexive
+\item Symmetric
+\item Antisymmetric
+\item Transitive
+\end{enumerate}
+\item Prove that if a relation $R$ is transitive and irreflexive, then it is asymmetric.
+\item Say that a string $x$ overlaps a string $y$ if there exist strings $p,q,r$ such that $x = pq$ and $y = qr$, with $q \neq \epsilon$. For example, $abcde$ overlaps $cdefg$, but does not overlap $bcd$ or $cdab$. Answer each of the following questions and prove your answer.
+\begin{enumerate}
+\item Is the overlap relation reflexive?
+\item Is it symmetric?
+\item Is it transitive?
+\end{enumerate}
+\item Determine what properties each of the following relations have. For those that are equivalence relations, briefly describe what the equivalence classes are in the relation.
+\begin{enumerate}
+\item The relation ``shares a class with'', where two people share a class if there is a class they are both enrolled in this semester.
+\item The relation $R$ on $\mathbb{Z}$, where $aRb$ if $b$ is a multiple of $a$.
+\item The relation $R$ on $\mathbb{Z} \times \mathbb{Z}$, with $(a,b)$ $R$ $(c,d)$ if $ad = bc$. 
+\end{enumerate}
+\iffalse
+\item Recall that any weak partial order is $D^*$ for some DAG $D$. Let the weak partial order divisibility ($a|b$ means $b$ is divisible by $a$) be $D^*$.
+\begin{enumerate}
+\item Draw the corresponding DAG for vertices $\{1, 2, ... 12\}$, where an edge from $a$ to $b$ means that $a|b$. Use as few edges as possible.
+\item Add the vertex $24$ to this graph. What is the smallest number of additional edges you need to do this?
+\end{enumerate}
+\fi
+\end{enumerate}
+\pagebreak
+
+
+\end{document}
+
