@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+\newcommand{\ra}{\rightarrow}
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+\begin{document}
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+\smallskip
+
+Module \#29 (Convergent and Divergent Series)
+\end{center}
+Author: Yifan Wu\\
+Reviewer: Nick Longenbaugh\\
+Last modified: April 24, 2014 
+
+\paragraph*{Executive Summary}
+\begin{enumerate}
+
+\item Common series
+\begin{enumerate}
+\item The geometric series: $\sum_{i=0}^{\infty} q^i = \frac{1}{1-q}$, provided $|q| < 1$.
+\item The negative binomial series: $\sum_{i=0}^{\infty} \binom{i+r-1}{r-1} q^i = \frac{1}{(1-q)^r}$ if $|q| < 1$.
+\item The ``harmonic series'' $\sum_{i=1}^{\infty} \frac{1}{i}$ is  divergent, but $\sum_{i=1}^n \frac{1}{i^2} = \frac{\pi^2}{6}$.
+\item The ``exponential series''  $\sum_{i=0}^{\infty} \frac{\alpha^i}{i!} = e^{\alpha}$. 
+\end{enumerate}
+
+\end{enumerate}
+
+\paragraph*{Small group problems}
+
+
+\begin{enumerate}
+
+\item Paul offers to let you play a game.  He'll flip a fair coin until he flips tails, then pay you $2^k$ dollars, where $k$ is the number of heads he flipped.  For instance, the sequence $HHHT$ would earn you \$8, while a tails on the first flip would leave you with just \$1.  What is the expected value of your winnings if you play this game once?  How much would you be willing to pay Paul to play this game one time?
+
+\item Simplify $\frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \frac{1}{3 \cdot 4} + \ldots + \frac{1}{99 \cdot 100}$.
+
+\item Prove that the``harmonic series'' $1 + \frac{1}{2} + \frac{1}{3} + \cdots$ is divergent.
+
+\emph{Hint:}  try to show that $\forall N > 0, \exists m\text { such that} \sum_{i=N+1}^m \frac{1}{i} > \frac{1}{2}$ (why does this prove divergence?)
+
+\item Simplify $\left(1 + \frac{1}{a}\right)\left(1 + \frac{1}{a^2}\right)\left(1 + \frac{1}{a^4}\right) \cdots \left(1 + \frac{1}{a^{2^{100}}}\right)$.
+
+\emph{Hint:}  What could you multiply the given product by on the left that would help you simplify this expression?  The formula for the ``difference of two squares'' may help you here.
+
+\item \textbf{Challenge:}  Let $S$ be the set $\{1, 2, 3, \ldots, 9, 11, 12, \ldots, 19, 21, \ldots\}$ consisting of all natural numbers that do not contain the digit zero.
+Do you think that the sum of the reciprocals of the elements of $S$ converges or diverges?  Justify your answer.
+
+
+
+\end{enumerate}
+
+\end{document}

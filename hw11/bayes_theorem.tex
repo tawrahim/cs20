@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+\begin{document}
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+\smallskip
+
+Module \#28 (Bayes Theorem \& the Monty Hall problem)
+\end{center}
+Author: Nick Longenbaugh\\
+Reviewer: Steve Komarov\\
+Last modified: April 14, 2014 
+
+%\paragraph*{Reading from Meyer}
+%You may have skimmed some of these sections earlier, but this time read them in more detail.
+%\begin{itemize}
+%\item Section 4.1 discusses sets.
+%\item Section 4.5 discusses finite sets.
+%\end{itemize}
+
+\paragraph*{Executive Summary}
+\begin{enumerate}
+
+\item Conditional probability
+\begin{itemize}
+\item From last class: $P(A | B) = \frac{P(A \cap B)}{P(B)}, \text{ provided } P(B) > 0.$
+
+\item Bayes' Rule (version 1): a tautology, given our definition:  $$P(A | B) = \frac{P(B | A)P(A)}{P(B)}$$
+
+\item Bayes' Rule (version 2): $$P(A | B) = \frac{P(A)P(B | A)}{P(B | A)P(A) + P(B|\overline{A})P(\overline{A})}$$
+\end{itemize}
+
+\item Conditioning on a partition - useful when conditional probabilities are given
+\begin{itemize}
+\item If events $B_1, B_2, \cdots B_n$ are disjoint, and their union is the entire sample space $S$, then
+
+$P(A) = P(A | B_1)P(B_1) +  P(A | B_2)P(B_2) +  \cdots + P(A | B_n)P(B_n).$
+\item Useful special case: $P(A) = P(A | B)P(B) +  P(A | \overline{B})(1-P(B)).$
+\item Finding the right partition is often the secret to solving a conditional probability problem.
+\item Conditioning on a set of events whose union is not the entire sample space is a celebrated way to go wrong.
+\end{itemize}
+\item Generalized Monty Hall problems
+
+\begin{itemize}
+\item Behind some of the doors are prizes; behind the others are booby prizes. All arrangements of the prizes and booby prizes are assumed equally likely.
+\item The contestant chooses a door.
+\item Monty Hall, who knows where the prizes are located, opens a door, different from the one chosen by the contestant, behind which he knows there is a booby prize. (If there were multiple prizes, he could choose to reveal a prize).
+\item Monty Hall then invites the contestant to switch his choice to one of the unopened doors. The question is whether making the switch increases the contestant's chance of winning a prize.
+\item Conditioning on the event $C=$ ``there is a prize behind the contestant's original door'' usually makes these problems trivial.
+\end{itemize}
+\end{enumerate}
+%\paragraph*{In-class exercise}
+%\medskip
+%\begin{enumerate}
+
+%\item You are playing a variant of poker in which two cards from your opponent's hand (out of a total of five cards) are dealt face-up. The opponent has two aces showing. What is the (conditional) probability that he has four of a kind?
+%\end{enumerate}
+
+\paragraph*{Small group problems}
+\begin{enumerate}
+\item Wisdom of Solomon
+
+In ancient Jerusalem, true prophets tell the truth 90\% of the time, while false prophets tell the truth half the time. Solomon's servant has brought him a group of three prophets, two true, one false. Each of the prophets knows which is which, but Solomon does not. Solomon asks prophet 1, ``Is prophet 2 a true prophet?''
+
+\begin{enumerate} \item If the answer is ``No,'' what is the conditional probability that prophet 3 is a true prophet? 
+
+
+\item If the answer is ``Yes,'' what is the conditional probability that prophet 2 is a true prophet? 
+
+Hint for part a. 
+
+As events, use $A_3$ = ``prophet 3 is the false prophet'' and $B$ = ``Solomon receives the answer `No.''' When calculating $P(B)$, partition the sample space into $A_3$ and the other two equally probable events\\ $A_2$ =``prophet 2 is the false prophet'' and\\ $A_1$ =``prophet 1 is the false prophet.''\\ Once you know $P(A_3|B)$, the problem is solved.
+
+\end{enumerate}
+\item An ambitious preschool, whose aim is to prepare toddlers for
+Harvard, has 8 students, 4 boys and 4 girls.  Following the
+example of Harvard, it divides its students randomly into two
+groups of 4, which it names ``Lowell House'' and ``Eliot House.''
+\begin{enumerate}
+\item What is the probability $P_4$ that all four boys end up in
+Eliot House?
+
+\item What is the probability $P_3$ that three boys and one girl
+end up in Eliot House, with the other boy and three girls in
+Lowell House?
+
+\item What is the probability $P_2$ that optimal diversity is
+achieved, with two boys in Eliot House and two in Lowell House?
+
+\item Verify that the sum of probabilities for all the ways of
+dividing the class between the houses is correct.
+
+\item A newly hired teacher meets one student, chosen at random,
+from Eliot House.  The student is a boy.  Calculate the
+conditional probabilities, given this event, that there are 4, 3,
+2, 1, or 0 boys in Eliot House. (These conditional probabilities
+should also sum to 1.)
+
+\item Next the teacher meets a randomly chosen student from Lowell
+House, who turns out to be a girl. Calculate the conditional
+probabilities, given both this event and the previous one, that
+there are 4, 3, 2, 1, or 0 boys in Eliot House.
+\end{enumerate}
+\item   In the admissions office at Monty Hall University there
+are four interviewers. Three of them are
+friendly, while the fourth is unfriendly. Every morning the
+Dean of Admissions assigns them randomly to offices 1, 2, 3, and
+4, with an equal probability for each possible assignment. A
+student arrives for an interview and is asked to select which
+office he wants to be interviewed in. He chooses office 1 and
+learns that the interviewer in there is busy for the next half
+hour.
+``While you are waiting,'' says the Dean to the student, ``I would like you to meet one of our friendly interviewers.  He opens an office door (but not office 1) and introduces the student to a friendly interviewer. He then continues, ``Rather than waiting, would you prefer to be interviewed by someone in one of the other offices?"
+
+If the student accapts this offer, does his probability of getting a friendly interviewer increase or decrease?
+
+\item After the sinking of the Titanic, many
+unidentified bodies were brought to Halifax for burial. The policy used was that anyone who was wearing a crucifix or
+holding a rosary was buried in the Catholic cemetery, while
+everyone else was buried in the non-Catholic cemetery. 
+
+Assume the following: \begin{itemize} \item 20\% of unidentified
+Titanic victims were Catholic. \item The conditional probability
+that a Catholic on a sinking ship will have a crucifix or rosary
+is 90\%.
+ \item The conditional probability that a non-Catholic on a sinking ship will have a crucifix or rosary is 15\%.
+ 
+\end{itemize}
+\begin{enumerate}
+\item Calculate the conditional probability that someone buried under a Titanic grave marker in the Catholic cemetery is in fact Catholic. 
+
+\item Calculate the conditional probability that someone buried under a Titanic grave marker in the non-Catholic cemetery is a Catholic.   \end{enumerate} 
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+
+\begin{document}
+
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+Module \#24 (General Principles of Counting) - Checkin \\
+Author: Tawheed Abdul-Raheem
+\end{center}
+
+\begin{enumerate}
+
+\item A license plate consists of either 
+\begin{itemize}
+\item 3 letters followed by 3 digits (standard plate) \\
+    $(26^{ 3 })(10^{ 3 })$ - \it{Not considering uppercase and lowercase)}
+\item 5 letters (vanity plate) \\
+    $26^5$
+\item 2 characters - letters or numbers (big shot plate) \\
+    $(10+26)^{ 2 }$
+\end{itemize}
+Compute the number of different possible license plates.
+
+\item How many of the billion numbers in the range from 1 to $10^9$ (inclusive) contain the digit 1? \\
+    $10^{9} - (9^{9} - 1)$
+
+\item How many anagrams does the name ``hardy'' have? How about the names ``littlewood'' and ``ramanujan?'' The anagrams do not have to be dictionary words. \\
+    $5! = 5 * 3 * 2 * 1$ - \it{hardy} \\
+
+    $\frac{10}{2!2!2!}$ - \it{littlewood} \\
+
+    $\frac{9!}{2!3!}$ - \it{ramanujan} \\
+
+\item \begin{enumerate}
+\item A dodecahedron has 12 faces, each a regular pentagon. How many edges does it have? \\
+    $12*5=60$ Since the edge of the dodecahedron is shared we have $12*5=60/2=30$
+\item Three faces of the dodecahedron meet at each vertex.  How many vertices does the dodecahedron have?\\
+    $12*5/3=20$ We are dividing by 3 because the faces meet at each vertex and we only have 3 faces
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

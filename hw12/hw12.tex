@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+
+
+\topmargin = 0.5 in \textwidth=6 in \textheight= 8 in
+
+\oddsidemargin = 0.15in \evensidemargin = 0.15in
+
+
+\begin{document}
+
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+Homework Problems\\
+Random Variables, Series and Recurrence\\
+Author: Tawheed Abdul-Raheem
+\end{center}
+
+\begin{enumerate}
+
+\item Steve invites you to play a game of tossing coins. You toss a fair coin until it comes up heads. If heads first appears on an odd-numbered toss $n$, you lose $n$ dollars. If heads first appears on an even-numbered toss, you win a fixed amount z dollars. The random variable $X$ is your winnings. Determine for what value of $z, E(X) = 0$, so that this is a fair game. \\
+  %Even probability \\
+  %\[\text{First term: } \frac{1}{4} \]
+ %\[\text{Ratio: } \dfrac{\frac{1}{16}}{\frac{1}{4}} \]
+ \[ \text{Even series: } \dfrac{\frac{1}{4}}{1 - (\frac{1}{4})} = \dfrac{\frac{1}{4}}{\frac{3}{4}} = \dfrac{1}{3}z \]
+ \[ \text{Odd series: } \dfrac{10}{9} \]
+ \[ \text{Value of } z, E(X) = 0,\]
+ \[ \dfrac{1}{3}z - \dfrac{10}{9} = 0 \]
+ \[ z = \dfrac{10}{3} \]
+
+\item Ruth is eating Haribo gummy bears from a magic dispenser that has infinite supplies. Ruth could eat as much gummy bears as she want. There are five flavors: raspberry (red), orange (orange), strawberry (green), pineapple (colorless), and lemon (yellow). Ruth will keep on eating new gummy bears one at a time until she has finished eating 1) at least one of either red orange or yellow (because they taste similar to Ruth) 2) one of green, 3) one of colorless. Examples of satisfying sequence of gummy bears are (a) green, red, colorless (b) red, colorless, yellow, red, green. Note that the probability of getting a certain flavor doesn't change no matter how many is dispensed (because it's a magical dispenser). What is the expected number of gummy bear that Ruth will eat before she gets all the flavors? \\\\
+  There are three possible ways that Ruth can eat the gummy bears \\
+  \[ \text{Red + Orange + Yellow } ...................... A \]
+  \[ \text{Green }...................... G \]
+  \[ \text{Colorless} ................. C \]
+  \[ \text{E (after first) } = \frac{3}{5} \cdot \text{E(after first if first was A)} \]
+  \[ \text{E (after first) } = \frac{1}{5} \cdot \text{E(after first if first was G)} \]
+  \[ \text{E (after first) } = \frac{1}{5} \cdot \text{E(after first if first was C)} \]
+  \[ \text{\textbf{Case 1}: E(After first, if first was G)} \]
+  \[ \dfrac{5}{1} + \dfrac{5}{1} \]
+  \[ \text{\textbf{Case 2:} E(After first, if first was G) } \]
+  \[ = \dfrac{5}{4} + \text{E(to get last)} \]
+  \[ \text{E(to get last)} = \dfrac{3}{4} \cdot \text{E(C)} \]
+  \[ \text{E(to get last)} = \dfrac{1}{4} \cdot \text{E(A)} \]
+  \[ \text{ E(C) = } \dfrac{5}{1}   \text{      E(A)  } = \dfrac{5}{3} \]
+  \[ \text{\textbf{Case 3:} E(After first, if first was C) } \]
+  \[ \dfrac{5}{4} + \text{ E(to get last)} \]
+  \[ \text{E(to get last) } = \dfrac{3}{4} + \text{E(G)} \]
+  \[ \text{E(to get last) } = \dfrac{1}{4} + \text{E(A)} \]
+  \[ \text{E(G)} = \dfrac{5}{1}  \text{    E(A) } = \dfrac{5}{3} \]
+  Finally we sum up all the cases to get the expected value
+  \[ 1 + \dfrac{3}{5} \cdot (\dfrac{5}{2} + \dfrac{5}{1}) + \dfrac{1}{5} \cdot (\dfrac{5}{4} + \dfrac{3}{4} \cdot \dfrac{5}{1} + \dfrac{1}{4} \cdot \dfrac{5}{3} ) + \dfrac{1}{5} \cdot (\dfrac{5}{4} + \dfrac{3}{4} \cdot \dfrac{5}{1} + \dfrac{1}{4} \cdot \dfrac{5}{3} ) \]
+  \[\dfrac{23}{3} \]
+  
+%\item 
+%\begin{enumerate} 
+%\item Determine a closed form expression for $\sum_{k=0}^n k \binom{n}{k}$, and prove that it is correct. \emph{Hint: consider the binomial expansion for $(1+x)^n$}
+%\item Prove the following recurrence relations
+  %\[ \binom{m}{k}+\binom{m}{k+1}=\binom{m+1}{k+1}.  \]
+%\end{enumerate}
+
+\item A fisherman catches 1000 lobsters in his first year of fishing and 3000 lobsters in his second year. For each year thereafter, he catches a number of lobsters equal to the average of what he caught in the previous two years. How many lobsters does he catch in year $n$? (Hint: write out the first few years' numbers. Do you notice a pattern?) \\
+  \[\text{Year 1 = 1000 lobsters}\]
+  \[\text{Year 2 = 3000 lobsters}\]
+  \[\text{Year 3 = 2000 lobsters}\]
+  \[\text{Year 4 = 2500 lobsters}\]
+  \[\text{Year 5 = 2250 lobsters}\]
+  \[\text{Year 6 = 2375 lobsters}\]
+  \[\text{Year 7 = 2312.5 lobsters}\]
+  \[\text{Year 8 = 2343.75 lobsters}\]
+  \[\text{.}\]
+  \[\text{.}\]
+  \[\text{.}\]
+  \[\text{.}\]
+  \[\text{.}\]
+  \[\text{ Year n}\]
+  There exists an alternating sequence of a small number and then a larger number.
+It is 1000 plus the following sum of geometric series. every time the interval gets smaller 1/2 times and the minus sign will make it alternate between addition and subtraction
+\[ -2000\cdot(\sum_{k=0}^{n-1}((-1/2)^{k})) \]
+  \[ a_n = \dfrac{125}{3}2^{3-n}(8(-1)^{n}+7 \cdot 2^{n})\]
+
+\item Find recurrence relations and initial conditions for
+\begin{enumerate} 
+\item The number of $n$-digit ternary sequences with an even number of $0$s. Note that since this is a sequence it could start with $0$. Verify that you have the correct recurrence: 5 digit ternary sequence should have $122$ such sequences.\\\\
+With the digits $0,1$ represented by $u$ and $v$ our sequences have the generating function
+$$(u+v)^n.$$
+
+$$\frac{1}{2} \left((u+v)^n + (-u+v)^n\right).$$
+
+\item The number of n-digit ternary sequences with an even number of 0s and an even number of 1s. Verify that you have the correct recurrence: 5 digit ternary sequence should have $61$ such sequences. \\
+$$\frac{1}{4} \left((u+v)^n + (-u+v)^n\right)
++ \frac{1}{4} \left((u-v)^n + (-u-v)^n\right).$$
+{\it Hint: break the count into some sub cases and recurse on the sub cases.}
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+\end{document} 

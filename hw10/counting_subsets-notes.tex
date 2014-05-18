@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+
+\begin{document}
+
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+
+\smallskip
+
+Module \#25 (Counting Subsets)
+\end{center}
+Author: Steve Komarov\\
+Reviewer: Paul Handorff\\
+Last modified: \today
+
+\medskip
+
+
+\paragraph*{Executive Summary}
+\begin{itemize}
+
+
+\item {\bf Binomial Coefficient:} This is the formula for ``n choose r''. It represents the number of ways one can select a set of r items from a set of n distinguishable items (e.g. playing cards):
+$$
+\binom{n}{r}=\frac{n!}{(n-r)! r!}.
+$$ 
+
+\item
+If set $A$ has $n$ elements, then the number of distinct sequences of $r$ different elements (no repetition allowed) is
+$$
+n(n-1)(n-2)...(n-r+1)
+=
+\frac{n!}{(n-r)!}.
+$$
+
+\item {\bf A Standard Card Deck} consists of 52 cards. The cards are organized in 13 ranks (2, 3, ..., 10, Jack, Queen, King, Ace), each in in each of four suits (hearts $\heartsuit$, clubs $\clubsuit$, diamonds $\diamondsuit$, spades $\spadesuit$). 
+
+\item {\bf A Poker Hand} consists of 5 cards. 
+
+\item {\bf A Bridge Hand} consists of 13 cards. 
+
+
+
+
+\end{itemize}
+
+\pagebreak
+
+\paragraph*{In-class Problems}
+
+
+
+\begin{enumerate}
+
+\item A football team ends the regular season with an 11-5 record. How many different sequences of wins and losses can lead to this outcome?
+
+
+
+\item How many different terms of the form $x^ix^jx^k$, where $i,j,k\in \mathbb{N}$, are equal to $x^{10}?$ Note that zero is not a natural number. 
+
+
+
+\item  In poker, what is the frequency ratio of ``two pair'' (two cards of each of two different ranks, one card of a different rank) to ``three of a kind'' (three cards of one rank, one card each of two of the other ranks) (as a fraction in lowest terms)?
+
+
+
+\item In bridge, a ``4-3-3-3 hand'' is one that has four cards in one suit, three cards in each of the other three suits.
+ A ``4-4-3-2 hand'' is one that has two cards in one suit, three cards in a second suit, four cards in each of the remaining two suits.
+Show that the 4-4-3-2 hands are more frequent, and find the ratio of frequencies (as a fraction in lowest terms).
+
+\item How many ways are there to select six marbles from a box containing marbles in seven different colors (red, green, blue, yellow, cyan, magenta, white)? The order of selecting the marbles does not matter, there are infinitely many marbles of each color, and marbles of the same color are indistinguishable from each other.  
+
+\end{enumerate}
+
+\pagebreak
+
+\end{document}

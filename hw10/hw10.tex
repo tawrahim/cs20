@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+\begin{document}
+
+\begin{center}
+    COMPUTER SCIENCE 20, SPRING 2014 \\
+    Homework Problems\\
+    Basic Counting, Counting Subsets, Basic Probability \\
+    Author: Tawheed Abdul-Raheem
+\end{center}
+
+\smallskip
+
+\begin{enumerate}
+
+    \item At each step a robot has to move one unit in the positive x direction or one unit in the positive y direction. Assuming that the robot starts at the origin (0,0), in how many different ways can the robot reach the point (4,5)? \\
+        \[ \dbinom{9}{4} = \dbinom{9}{5} = 126 \]
+    \item 
+        \begin{enumerate}
+            \item How many odd, four-digit numbers are there with no repeated digits? Note that, for example, 0123 is not considered a four-digit number, but rather a three-digit number. \\
+                \[5 \cdot9\cdot8\cdot(6+7) \]
+            \item How many even, four-digit numbers are there with no repeated digits? \\
+                \[ 5\cdot9\cdot8\cdot(6+7) \]
+        \end{enumerate}
+
+    \item How many ways are there to order the 26 letters of the alphabet so that no two of the vowels $a, e, i, o, u$ appear consecutively and the last letter in the ordering is not a vowel? \\
+        \textbf{Solution: } We have 26 letters in the alphabet and 5 of them are vowels, first we can arrange all the letters in the alphabet without the vowels. Now that we have 21 letters arranged, the first vowel can be placed in 21 different positions (i.e, before the first letter and the before the last letter). Now that the first vowel has taken a spot, there are $20$ different places that we can place the next vowel. Next we have 19 for the next vowel, the next vowel will have 18 spots that it can fill. Finally there would be a total of 17 spots left for the last vowel. This leads us to have  \[ 21! \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 \]
+
+    %\item In bridge, a ``6-4-2-1 hand'' is one that has six cards in one suit, four in another, etc.
+        %A ``6-3-3-1 hand'' is one that has six cards in one suit, one card in the shortest suit, three cards in each of the remaining two suits.
+        %Show that the 6-4-2-1 hands are more frequent (have a higher probability of being dealt to a player). Then find a distribution that includes a six-card suit and that is more frequent than either of these. You can use wolframalpha.com to do the computations and to verify your answers. \\
+
+    \item You have two identical 10-sided dice numbered 1,2,...,10, with the strange property that, for each die, the probability of rolling $n$ is \emph{proportional} to $n$. In other words, the probability of rolling a 2 is twice the probability of rolling a 1, the probability of rolling a 3 is three times the probability of rolling a 1, and so on. 
+
+        \begin{enumerate} 
+            \item For one of these dice, what is the probability of rolling an $n$? (Express your answer as some formula involving $n$.) \\
+                \[ P(\text{rolling n }) = \frac{n}{55} \]
+            \item You roll these two dice at the same time. What is the probability that the sum of the two rolls is at least 18? (Please leave your answer as a fraction.) \\
+                \[ P(\text{ at least 18 }) = ( \frac{9}{52} * \frac{9}{52}) + ( \frac{8}{52} * \frac{10}{52}) +( \frac{10}{52} * \frac{8}{52}) +( \frac{10}{52} * \frac{10}{52}) +( \frac{9}{52} * \frac{10}{52}) +( \frac{10}{52} * \frac{10}{52}) \] 
+            \item Is the probability of rolling at least one 9 independent of the probability that the sum of the two rolls is at least 18? Justify your answer mathematically. \\ 
+                The probability of rolling at least one 9 is not independent of the probability that the sum of the two rolls is at least 18. The first 9 that we get from rolling our first could be influeced by the fact that our sum is 18, rolling a 9 on the next die will cause our sum to be 18 and will mean that the first 9 from the first die influeced the result. \\
+                \[ P(18) = \frac{\text{rolling a 9}}{\text{sum of our roll}} \]
+        \end{enumerate}
+
+\end{enumerate}
+\end{document}

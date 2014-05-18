@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+\begin{document}
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+Author: Tawheed Abdul-Raheem\\
+Check-in problem \\
+Module \#27 (Conditional Probability)
+\smallskip
+\end{center}
+
+\begin{enumerate}
+\item Ruth purchases six Dunkin Munchkins, four plain and two chocolate. She
+chooses three at random and puts them in a bag for her friend Steve. The
+other three go into a bag for her other friend Paul.
+\begin{enumerate}
+\item How many ways are there for Ruth to select three of the six Munchkins for Steve? \\
+  \[5 \cdot 4 \cdot 3 = 120\]
+\item Show that the probability that Steve's bag has both of the chocolate Munchkins (event A2) is 0.2.
+  \[ \frac{24}{120} = \frac{1}{5} = 0.2 \]
+\item Show that the probability that each friend has exactly one chocolate Munchkin (event A1) is 0.6. Explain why P(A1) + 2P(A2) = 1. \\
+  $A1 := $ "Steve and Paul each have one chocolate" \\
+  $|A1| = 4! \cdot 3 \cdot 2 = 432$ \\
+  $P(A1) = \frac{|A1|}{|S|} = \frac{432}{720} = 0.6$ \\
+  This is true due to symmetry. The probability that Steve has two chocolates and Paul none is equal to the probability that Paul has two and and Steve has none (call this event A0). So P(A2) = P(A0), and since there are precisely two chocolate donuts, the events A1, A2, A3 partition the sample space, thus the sum of their probability is 1. \\
+  $1 = P(A1) + P(A2) + P(A0) = P(A1) + 2P(A2)$ \\
+  S - Steve, P - Paul \\
+  S2, P0 - 0.2 \\
+  S1, P1 - 0.6 \\
+  S0, P2 - 0.2
+
+\item Paul reaches into his bag and extracts a Munchkin at random. It is a plain one (event B). Show that the conditional probability, given event B, that Steve has both chocolate Munchkins, precisely one chocolate Munchkin, or no chocolate Munchkins are 0.3, 0.6, and 0.1 respectively. \\
+  B := "Paul randomly selects a donut and it is plain" \\
+  Ai := "Steve has precisely i chocolates" \\
+
+  \[ P(B) = P(B | A0)P(A0) + P(B | PA1)P(A1) + P(B | A2)P(A2) \] 
+  P(A0) = 0.2 \\
+  P(A1) = 0.6 \\
+  P(A2) = 0.2 \\
+  A0 means Paul has two chocolates and one plain. $P(B | A0) = \frac{1}{3}$ \\
+  A1 means Paul has one chocolates and two plain. $P(B | A1) = \frac{2}{3}$ \\
+  A0 means Paul has zero chocolates and three plain. $P(B | A2) = \frac{3}{3}$ \\
+  \[ P(B) = (\frac{1}{3})(\frac{1}{5}) + (\frac{2}{3})(\frac{3}{5}) + (\frac{3}{3})(\frac{1}{5}) = \frac{(1 + 6 + 3)}{15} = \frac{2}{3} \] 
+%\item Show that you can get the same answer more quickly by restricting the sample space. Everything is the same if Ruth first gives Paul a plain Munchkin to eat, then chooses three of the remaining five Munchkins at random and puts them in Steve's bag, leaving the other two for Paul.
+\end{enumerate}
+
+
+\end{enumerate}
+\end{document}

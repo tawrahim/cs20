@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+
+
+\topmargin = 0.1in \textwidth=5.7in \textheight=8.6in
+
+\oddsidemargin = 0.2in \evensidemargin = 0.2in
+
+
+\begin{document}
+
+\begin{center}
+COMPUTER SCIENCE 20, SPRING 2014 \\
+
+\smallskip
+
+Module \#24 (General Principles of Counting)
+\end{center}
+Author: Steve Komarov\\
+Reviewer: Paul Handorff\\
+Last modified: \today
+
+\medskip
+
+\paragraph*{Executive Summary}
+\begin{enumerate}
+
+\item Fundamental rules for counting
+
+\begin{itemize}
+
+\item The sum rule: If sets $A$ and $B$ are disjoint, $A$ has $a$ elements, and $B$ has $b$ elements, their union has $a + b$ elements. This permits a ``divide and conquer'' strategy.
+
+\item The difference rule: Suppose set $B$ has $b$ elements and its subset $A$ has $a$ elements. Then the set difference $B - A$ has $b-a$ elements. This rule is useful when it is easy to count sets $B$ and its subset $A$, but there is no simple way to count $B-A$ directly.
+
+\item The product rule:
+Suppose that set $A$ has $m$ elements and set $B$ has $n$ elements.  The Cartesian product $A \times B$ is the set of ordered pairs $(a, b)$, where $a$ is an element of $A$ and $b$ is
+an element of $B$.  The set $A \times B$ has $mn$ elements.
+
+\item The power rule: If $A$ has $n$ elements and you select a sequence of $r$ elements with replacement from $A$, there are $n^r$ possible sequences. 
+
+
+\item The division rule:
+When counting, it is fine to count things more than once, provided
+that everything gets overcounted the same number of times and that
+you know that number and divide by it.
+
+\end{itemize}
+
+
+\end{enumerate}
+
+\pagebreak
+
+
+
+\pagebreak
+
+\paragraph*{In-class problems}
+
+\begin{enumerate}
+
+\item A license plate consists of either 
+\begin{itemize}
+\item 3 letters followed by 3 digits (standard plate)
+\item 5 letters (vanity plate)
+\item 2 characters - letters or numbers (big shot plate)
+\end{itemize}
+Compute the number of different possible license plates.
+
+\item How many of the billion numbers in the range from 1 to $10^9$ (inclusive) contain the digit 1?
+
+\item How many anagrams does the name ``hardy'' have? How about the names ``littlewood'' and ``ramanujan?'' The anagrams do not have to be dictionary words. 
+
+
+\item \begin{enumerate}
+\item A dodecahedron has 12 faces, each a regular pentagon. How many edges does it have?
+\item Three faces of the dodecahedron meet at each vertex.  How many vertices does the dodecahedron have?
+
+
+
+\end{enumerate}
+
+
+
+\item {\bf Challenge:} How many binary strings of length 8 contain either four consecutive zeros or three consecutive ones. 
+
+
+
+
+\end{enumerate}
+
+\pagebreak
+
+\end{document}
